@@ -149,7 +149,7 @@ class Client(object):
         data = self._get_json_from_response(url, params=params)
         domains = list()
         for item in data:
-            domain = item['domain']
+            domain = item
             domains.append(domain)
             self.logger.debug('Discovered domains: {}'.format(domain))
 
@@ -159,7 +159,7 @@ class Client(object):
         """
          Update an existing domain via PATCH /v1/domains/{domain}
          https://developer.godaddy.com/doc#!/_v1_domains/update
-         
+
          currently it supports ( all optional )
             locked = boolean
             nameServers = list
